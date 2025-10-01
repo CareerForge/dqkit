@@ -3,8 +3,6 @@
 
 **Data Quality Evaluation Toolkit** (pandas-first)
 
-[![CI](https://github.com/your-org/dqkit/actions/workflows/ci.yml/badge.svg)](https://github.com/your-org/dqkit/actions)
-
 ## Features
 
 - Schema & validation rules

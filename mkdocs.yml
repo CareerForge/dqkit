@@ -1,0 +1,9 @@
+
+site_name: dqkit
+nav:
+  - Home: index.md
+  - Usage: usage.md
+  - Modules: modules.md
+  - Custom Metrics: custom_metrics.md
+  - CI Integration: ci_integration.md
+theme: readthedocs

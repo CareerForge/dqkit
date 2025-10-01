@@ -8,6 +8,7 @@ __pycache__/
 venv/
 .venv/
 env/
+.DS_Store
 
 # Editor/IDE specific files
 .vscode/

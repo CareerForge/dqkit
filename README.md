@@ -3,6 +3,10 @@
 
 **Data Quality Evaluation Toolkit** (pandas-first)
 
+A Python Library for Testing and Ensuring Data Quality in Pandas.
+
+High-quality data is critical for the reliability of modern machine learning (ML) and data-driven decision-making systems. Poor data quality can lead to biased outcomes, reduced model performance, and misleading insights. Despite its importance, data quality testing remains ad hoc and fragmented across tools and workflows. We present dqkit, an open-source Python library that provides a unified framework for validating, profiling, and monitoring the quality of tabular data, with a primary focus on pandas dataframes. The toolkit implements a wide range of data quality checks—such as validation against standards and thresholds, missingness analysis, imbalance detection, redundancy checks, representativeness evaluation, noise detection, drift monitoring, logging, and reporting—through a standardized, extensible interface. dqkit is designed to be easily integrated into existing machine learning pipelines, continuous integration workflows, and reporting systems. By combining breadth of coverage with lightweight usability, dqkit aims to establish itself as a community standard for reproducible data quality testing.
+
 ## Features
 
 - Schema & validation rules

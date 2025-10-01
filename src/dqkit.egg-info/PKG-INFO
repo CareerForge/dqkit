@@ -1,0 +1,78 @@
+Metadata-Version: 2.4
+Name: dqkit
+Version: 0.1.0
+Summary: Data Quality Evaluation Toolkit (tabular, pandas-first)
+Author: Your Name
+License: Apache-2.0
+Requires-Python: >=3.9
+Description-Content-Type: text/markdown
+Requires-Dist: pandas>=1.5
+Requires-Dist: numpy>=1.23
+Requires-Dist: scikit-learn>=1.2
+
+
+# dqkit
+
+**Data Quality Evaluation Toolkit** (pandas-first)
+
+[![CI](https://github.com/your-org/dqkit/actions/workflows/ci.yml/badge.svg)](https://github.com/your-org/dqkit/actions)
+
+## Features
+
+- Schema & validation rules
+- Profiling (stats, histograms, entropy)
+- Missingness patterns
+- Label noise estimation
+- Class imbalance measures
+- Row/feature redundancy detection
+- Representativeness (PSI, KS)
+- Drift over time
+- Anomaly/outlier scoring
+- Logging & longitudinal tracking
+- Checks-as-code for CI
+- Report generation (HTML/Markdown)
+- Standards & thresholds
+- Metric registry for plugins
+- Segments / fairness slices
+
+## Quickstart
+
+```bash
+pip install dqkit
+```
+
+```python
+import pandas as pd
+from dqkit.io.pandas_io import from_dataframe
+from dqkit.profiling import profile
+from dqkit.missingness import analyze_missingness
+from dqkit.imbalance import measure_imbalance
+from dqkit.report import render
+from dqkit.standards import apply_interpretations
+from dqkit.types import RunReport
+
+df = pd.DataFrame({"age":[20,25,None,40], "label":[0,0,1,1]})
+ds = from_dataframe(df, name="toy")
+
+rep = []
+rep += profile(ds).metrics
+rep += analyze_missingness(ds).metrics
+rep += measure_imbalance(ds, y="label").metrics
+
+final = RunReport(metrics=rep)
+final = apply_interpretations(final)
+render(final, out_dir="dq_reports")
+```
+
+---
+
+## Development
+
+```bash
+git clone https://github.com/your-org/dqkit.git
+cd dqkit
+pip install -e ".[dev]"
+pytest
+```
+
+Artifacts (histograms, missingness patterns, suspect rows, reports) are written to `artifacts/` or `dq_reports/` directories.

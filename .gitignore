@@ -1,0 +1,33 @@
+# Python bytecode files
+__pycache__/
+*.pyc
+*.pyd
+*.pyo
+
+# Virtual environments
+venv/
+.venv/
+env/
+
+# Editor/IDE specific files
+.vscode/
+.idea/
+*.swp
+*~
+
+# Log files and temporary data
+*.log
+*.tmp
+*.bak
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# Configuration files
+config.ini
+.env
+
+# Large data files
+data/
+*.csv
+*.json
